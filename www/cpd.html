@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<title>LED Mask</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="css/all.css">
+<link rel="stylesheet" href="css/rangeslider.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <img id="mainlogo" src="assets/icon.png" style="width:30%" alt="mainlogo">
+    <a href="setup.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Setup</a>
+     <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
+  </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity">
+<span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
+<div class="w3-clear"></div>
+<header class="w3-center w3-margin-bottom">
+  <h1><b>Custom Program</b></h1>
+  <p><b>Select a colour duration and click go</b></p>
+</header>
+</div>
+<!-- Main Content-->
+<div class="w3-center w3-margin-bottom">
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="red" checked>
+  <img src="assets/red.png">
+</label>
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="blue" checked>
+  <img src="assets/blue.png">
+</label>
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="green" checked>
+  <img src="assets/green.png">
+</label>
+</label>
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="yellow" checked>
+  <img src="assets/yellow.png">
+</label>
+</label>
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="white" checked>
+  <img src="assets/white.png">
+</label>
+<br>
+<br>
+<div class="w3-center w3-margin-bottom">
+<div class="slidecontainer">
+  <input name="sl1" type="range" min="0" max="10" value="0" id="myRange"  onchange="setTim1(this.value)">
+  <p><h1 id="demo"></h1></p>
+</div>
+</div>
+
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="red" checked>
+  <img src="assets/red.png">
+</label>
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="blue" checked>
+  <img src="assets/blue.png">
+</label>
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="green" checked>
+  <img src="assets/green.png">
+</label>
+</label>
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="yellow" checked>
+  <img src="assets/yellow.png">
+</label>
+</label>
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)" value="white" checked>
+  <img src="assets/white.png">
+</label>
+
+<div class="w3-center w3-margin-bottom">
+<br>
+<br>
+<div class="slidecontainer">
+  <input name="sl2" type="range" min="0" max="10" value="0" class="slider" id="myRange2" onchange="setTim2(this.value)">
+  <p><h1 id="demo2"></h1></p>
+</div>
+</div>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="red" checked>
+  <img src="assets/red.png">
+</label>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="blue" checked>
+  <img src="assets/blue.png">
+</label>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="green" checked>
+  <img src="assets/green.png">
+</label>
+</label>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="yellow" checked>
+  <img src="assets/yellow.png">
+</label>
+</label>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)" value="white" checked>
+  <img src="assets/white.png">
+</label>
+
+<div class="w3-center w3-margin-bottom">
+<br>
+<br>
+<div class="slidecontainer">
+  <input name="sl3" type="range" min="0" max="10" value="0" class="slider" id="myRange3"  onchange="setTim3(this.value)">
+  <p><h1 id="demo3">0</h1></p>
+</div>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Save Changes and Go</h2>
+<p class="w3-padding-16"><a href="cp.html"><button class="w3-button w3-pink" onclick="goCustom()">Go</button></a></p>
+</div>
+</body>
+
+<!-- End Page Content -->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-instagram-square"></i>
+  <i class="fab fa-snapchat-square"></i>
+  <i class="fab fa-pinterest-square"></i>
+  <i class="fab fa-twitter-square"></i>
+</footer>
+ 
+<script>
+// Toggle grid padding
+function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else { 
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function test(sl1){
+  alert(sl1);
+}
+</script>
+<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/fastclick.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/zepto-1.1.6.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/Ctimer.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/slider.js"></script>
+</body>
+</html>
+

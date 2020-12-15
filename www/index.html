@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<title>LED Mask</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="css/all.css">
+<style>
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+<body>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <img id="mainlogo" src="assets/icon.png" style="width:30%" alt="mainlogo">
+    <a href="setup.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Setup</a>
+     <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
+  </div>
+</nav>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+<!-- Header -->
+<div class="w3-center w3-margin-bottom">
+<span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
+<div class="w3-clear"></div>
+<header class="w3-center w3-margin-bottom">
+  <img id="mainlogo" src="assets/logo.png" style="width:100%" alt="mainlogo">
+  <p><b>Select a Program Below</b></p>
+</header>
+</div>
+<!-- Main Content-->
+<div class="w3-center w3-margin-bottom">
+<h2>Red Program</h2>
+<p>Stimulates the production of the skin's ‘youthful' cells, Collagen and Elastin, so is perfect if you're looking to treat the signs of ageing. It can also help with signs of inflammation.</p>
+<p class="w3-padding-16"><a href="rp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Blue Program</h2>
+<p>Ideal for treating acne-prone skin, Blue Light balances and clarifies the skin, killing the bacteria that causes acne.</p>
+<p class="w3-padding-16"><a href="bp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Green Program</h2>
+<p>This calms the skin. It's perfect for dealing with pigmentation such as age spots and reducing the appearance of broken capillaries.</p>
+<p class="w3-padding-16"><a href="gp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Yellow Program</h2>
+<p>This is the one for treating sensitive skin. It boosts circulation and lymphatic flow (drains toxins) as well as soothing and comforting the skin.</p>
+<p class="w3-padding-16"><a href="yp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>White Program</h2>
+<p>This treatment penetrates the deeper layers of the skin to promote healing and skin repair.</p>
+<p class="w3-padding-16"><a href="wp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Custom Program</h2>
+<p>Select 3 different colours and choose a time for each one (up to 10 mins)</p>
+<p class="w3-padding-16"><a href="cpd.html"><button class="w3-button w3-pink">Go</button></a></p>
+</div>
+
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-instagram-square"></i>
+  <i class="fab fa-snapchat-square"></i>
+  <i class="fab fa-pinterest-square"></i>
+  <i class="fab fa-twitter-square"></i>
+</footer>
+ 
+<script>
+// Toggle grid padding
+function myFunction() {
+  var x = document.getElementById("myGrid");
+  if (x.className === "w3-row") {
+    x.className = "w3-row-padding";
+  } else { 
+    x.className = x.className.replace("w3-row-padding", "w3-row");
+  }
+}
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
