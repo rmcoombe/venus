@@ -10,6 +10,9 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
+    <plugin name="cordova-plugin-device"         source="npm" spec="1.0.1" />
+    <plugin name="cordova-plugin-splashscreen"   source="npm" spec="2.1.0" />
+    <plugin name="cordova-plugin-whitelist"      source="npm" spec="1.1.0" />
     
     <platform name="android"><icon src="ldpi.png" platform="android" qualifier="ldpi" />
 		<icon src="icons/mdpi.png" platform="android" qualifier="mdpi" />
@@ -33,4 +36,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+        <plugin name="cordova-plugin-device"         source="npm" spec="1.0.1" />
+    <plugin name="cordova-plugin-splashscreen"   source="npm" spec="2.1.0" />
+    <plugin name="cordova-plugin-whitelist"      source="npm" spec="1.1.0" />
 </widget>
