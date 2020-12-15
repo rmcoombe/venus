@@ -4,7 +4,7 @@
     id          = "com.bsdmasterindex.pg-arduino-toggle13"
     version     = "2.0"
     versionCode = "10" ><!-- versionCode is optional and Android only -->
-    <preference name="phonegap-version" value="cli-5.2.0" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
 
     <name>Phonegap Arduino Toggle13</name>
     <description>A simple phonegap App to toggle LED #13 on the Arduino Yun</description>
