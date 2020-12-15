@@ -7,7 +7,6 @@
     <author email="support@phonegap.com" href="http://phonegap.com">
         Ross Coombe
     </author>
-    <splash src="splash.png" />
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
@@ -38,12 +37,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 
-    <preference name="SplashScreen" value="splash" />
-    <preference name="AutoHideSplashScreen" value="true" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashShowOnlyFirstTime" value="false" />
     
     <plugin name="cordova-plugin-device"         source="npm" spec="1.0.1" />
-    <plugin name="cordova-plugin-splashscreen"   source="npm" spec="2.1.0" />
     <plugin name="cordova-plugin-whitelist"      source="npm" spec="1.1.0" />
 </widget>
