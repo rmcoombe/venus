@@ -11,6 +11,29 @@ body,h1 {font-family: "Montserrat", sans-serif}
 img {margin-bottom: -7px}
 .w3-row-padding img {margin-bottom: 12px}
 </style>
+<script>
+ if (localStorage.getItem("rt") === null){
+    localStorage.setItem("rt", 0);
+ } 
+  if (localStorage.getItem("gt") === null){
+    localStorage.setItem("gt", 0);
+ } 
+  if (localStorage.getItem("bt") === null){
+    localStorage.setItem("bt", 0);
+ } 
+  if (localStorage.getItem("yt") === null){
+    localStorage.setItem("yt", 0);
+ } 
+  if (localStorage.getItem("wt") === null){
+    localStorage.setItem("wt", 0);
+ } 
+console.log("Total Red: " +localStorage.getItem("rt"));
+console.log("Total Green: " +localStorage.getItem("gt"));
+console.log("Total Blue: " +localStorage.getItem("bt"));
+console.log("Total Yellow: " +localStorage.getItem("yt"));
+console.log("Total White: " +localStorage.getItem("wt"));
+
+</script>
 <body>
 
 <!-- Sidebar -->
@@ -21,6 +44,7 @@ img {margin-bottom: -7px}
   <div class="w3-bar-block w3-center">
     <img id="mainlogo" src="assets/icon.png" style="width:30%" alt="mainlogo">
     <a href="setup.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Setup</a>
+     <a href="stats.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Statistics</a>
      <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
   </div>
 </nav>

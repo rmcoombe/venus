@@ -18,7 +18,7 @@ const setterBtns = document.querySelectorAll('button[data-setter]');
 
 let intervalTimer;
 let timeLeft;
-let wholeTime = 10 * 60; // manage this to set the whole time 
+let wholeTime = 1 * 60; // manage this to set the whole time 
 let isPaused = false;
 let isStarted = false;
 
@@ -64,6 +64,10 @@ function timer (seconds){ //counts time, takes seconds
     timeLeft = Math.round((remainTime - Date.now()) / 1000);
     if(timeLeft < 0){
       led();
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("rt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("rt",newRTtotal);
       clearInterval(intervalTimer);
       isStarted = false;
       setterBtns.forEach(function(btn){

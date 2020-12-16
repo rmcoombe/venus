@@ -3,7 +3,6 @@
 <title>LED Mask</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/app.css">
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="css/all.css">
@@ -12,6 +11,24 @@ body,h1 {font-family: "Montserrat", sans-serif}
 img {margin-bottom: -7px}
 .w3-row-padding img {margin-bottom: 12px}
 </style>
+<script src="js/Chart.js" type="text/javascript"></script>
+<script>
+var totalRed = localStorage.getItem("rt") / 60;
+var totalGreen = localStorage.getItem("gt") /60;
+var totalBlue = localStorage.getItem("bt") /60;
+var totalYellow = localStorage.getItem("yt") / 60;
+var totalWhite = localStorage.getItem("wt") / 60;
+
+
+window.onload = function(){
+   document.getElementById('totalRedP').innerHTML = "Red Program: " + totalRed;
+   document.getElementById('totalGreenP').innerHTML = "Green Program: " + totalGreen;
+   document.getElementById('totalBlueP').innerHTML = "Blue Program: " + totalBlue;
+   document.getElementById('totalYellowP').innerHTML = "Yellow Program: " + totalYellow;
+   document.getElementById('totalWhiteP').innerHTML = "White Program: " + totalWhite;
+}
+
+</script>
 <body>
 
 <!-- Sidebar -->
@@ -23,44 +40,34 @@ img {margin-bottom: -7px}
     <img id="mainlogo" src="assets/icon.png" style="width:30%" alt="mainlogo">
     <a href="setup.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Setup</a>
     <a href="stats.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Statistics</a>
-    <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
+     <a href="index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
   </div>
 </nav>
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
-
 <!-- Header -->
-<div class="w3-opacity">
+<div class="w3-center w3-margin-bottom">
 <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
 <div class="w3-clear"></div>
 <header class="w3-center w3-margin-bottom">
-  <h1><b>Green Program</b></h1>
-  <p><b>Put your mask on and press play to start</b></p>
+  <img id="mainlogo" src="assets/logo.png" style="width:100%" alt="mainlogo">
+  <p><b>Your Usage</b></p>
+  <p>This area shows you how many minutes you have done on each colour. You can track your progress and see how you are doing</p>
 </header>
 </div>
 <!-- Main Content-->
-<body>
-<div class="container">
-  <div class="setters">
-  </div>
-  <div class="circle"> <svg width="300" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-    <g transform="translate(110,110)">
-      <circle r="100" class="e-c-base"/>
-      <g transform="rotate(-90)">
-        <circle r="100" class="e-c-progress"/>
-        <g id="e-pointer">
-          <circle cx="100" cy="0" r="8" class="e-c-pointer"/>
-        </g>
-      </g>
-    </g>
-    </svg> </div>
-  <div class="controlls">
-    <div class="display-remain-time">00:30</div>
-    <button class="play" id="pause" onclick="led()"></button>
-  </div>
+<div class="w3-center w3-margin-bottom">
+<canvas id="bar-chart" width="100%"></canvas>
 </div>
-</body>
+<div class="w3-center w3-margin-bottom">
+<p><b>Total Minutes on Program</b></p>
+<p id="totalRedP"></p>
+<p id="totalGreenP"></p>
+<p id="totalBlueP"></p>
+<p id="totalYellowP"></p>
+<p id="totalWhiteP"></p>
+</div>
 
 <!-- End Page Content -->
 </div>
@@ -94,11 +101,31 @@ function w3_open() {
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
+
+// Bar chart
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: ["Red", "Blue", "Green", "Yellow", "White"],
+      datasets: [
+        {
+          label: "Time (minutes)",
+          backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(0, 0, 255, 0.5)","rgba(0, 255, 0, 0.5)","rgba(255, 242, 0, 0.5)","rgba(255, 255, 255, 0.5)"],
+          borderColor: ["rgba(255, 0, 0, 1)", "rgba(0, 0, 255, 0.5)","rgba(0, 255, 0, 0.5)","rgba(255, 242, 0, 0.5)","rgba(0, 0, 0, 1)"],
+          borderWidth: 1,
+          data: [totalRed,totalBlue,totalGreen,totalYellow,totalWhite]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Minutes On Each Colour (completed program)'
+      }
+    }
+});
 </script>
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/fastclick.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/zepto-1.1.6.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/Gtimer.js"></script>
+
 </body>
 </html>
-
