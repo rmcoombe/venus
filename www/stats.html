@@ -18,6 +18,8 @@ var totalGreen = localStorage.getItem("gt") /60;
 var totalBlue = localStorage.getItem("bt") /60;
 var totalYellow = localStorage.getItem("yt") / 60;
 var totalWhite = localStorage.getItem("wt") / 60;
+var totalPurple = localStorage.getItem("pt") / 60;
+var totalTurquoise = localStorage.getItem("tt") / 60;
 
 
 window.onload = function(){
@@ -26,6 +28,8 @@ window.onload = function(){
    document.getElementById('totalBlueP').innerHTML = "Blue Program: " + totalBlue;
    document.getElementById('totalYellowP').innerHTML = "Yellow Program: " + totalYellow;
    document.getElementById('totalWhiteP').innerHTML = "White Program: " + totalWhite;
+   document.getElementById('totalPurpleP').innerHTML = "Purple Program: " + totalPurple;
+   document.getElementById('totalTurquoiseP').innerHTML = "Turquoise Program: " + totalTurquoise;
 }
 
 </script>
@@ -67,6 +71,8 @@ window.onload = function(){
 <p id="totalBlueP"></p>
 <p id="totalYellowP"></p>
 <p id="totalWhiteP"></p>
+<p id="totalPurpleP"></p>
+<p id="totalTurquoiseP"></p>
 </div>
 
 <!-- End Page Content -->
@@ -106,18 +112,25 @@ function w3_close() {
 new Chart(document.getElementById("bar-chart"), {
     type: 'bar',
     data: {
-      labels: ["Red", "Blue", "Green", "Yellow", "White"],
+      labels: ["Red", "Blue", "Green", "Yellow", "White","Purple","Turquoise"],
       datasets: [
         {
           label: "Time (minutes)",
-          backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(0, 0, 255, 0.5)","rgba(0, 255, 0, 0.5)","rgba(255, 242, 0, 0.5)","rgba(255, 255, 255, 0.5)"],
-          borderColor: ["rgba(255, 0, 0, 1)", "rgba(0, 0, 255, 0.5)","rgba(0, 255, 0, 0.5)","rgba(255, 242, 0, 0.5)","rgba(0, 0, 0, 1)"],
+          backgroundColor: ["rgba(255, 0, 0, 0.5)", "rgba(0, 0, 255, 0.5)","rgba(0, 255, 0, 0.5)","rgba(255, 242, 0, 0.5)","rgba(255, 255, 255, 0.5)","rgba(255, 0, 255, 0.5)","rgba(0, 206, 209, 0.5)"],
+          borderColor: ["rgba(255, 0, 0, 1)", "rgba(0, 0, 255, 0.5)","rgba(0, 255, 0, 0.5)","rgba(255, 242, 0, 0.5)","rgba(0, 0, 0, 1)","rgba(255, 0, 255, 0.5)","rgba(255, 206, 209, 0.5)"],
           borderWidth: 1,
-          data: [totalRed,totalBlue,totalGreen,totalYellow,totalWhite]
+          data: [totalRed,totalBlue,totalGreen,totalYellow,totalWhite,totalPurple,totalTurquoise]
         }
       ]
     },
     options: {
+      scales: {
+        yAxes: [{
+            ticks: {
+                beginAtZero: true
+            }
+        }]
+    },
       legend: { display: false },
       title: {
         display: true,
@@ -125,6 +138,22 @@ new Chart(document.getElementById("bar-chart"), {
       }
     }
 });
+</script>
+<script type="text/javascript">
+   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+   function onDeviceReady() {
+
+   document.addEventListener("backbutton", onBackKeyDown, false);
+
+  }
+
+   function onBackKeyDown(e){
+
+   e.preventDefault();
+
+  window.location.replace("index.html");
+  } 
 </script>
 
 </body>

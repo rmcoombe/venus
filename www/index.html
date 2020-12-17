@@ -27,11 +27,28 @@ img {margin-bottom: -7px}
   if (localStorage.getItem("wt") === null){
     localStorage.setItem("wt", 0);
  } 
+   if (localStorage.getItem("tt") === null){
+    localStorage.setItem("tt", 0);
+ } 
+   if (localStorage.getItem("pt") === null){
+    localStorage.setItem("pt", 0);
+ } 
 console.log("Total Red: " +localStorage.getItem("rt"));
 console.log("Total Green: " +localStorage.getItem("gt"));
 console.log("Total Blue: " +localStorage.getItem("bt"));
 console.log("Total Yellow: " +localStorage.getItem("yt"));
 console.log("Total White: " +localStorage.getItem("wt"));
+console.log("Total Purple: " +localStorage.getItem("pt"));
+console.log("Total Turquoise: " +localStorage.getItem("tt"));
+
+/*localStorage.setItem("rt", 0)
+localStorage.setItem("gt", 0)
+localStorage.setItem("bt", 0)
+localStorage.setItem("yt", 0)
+localStorage.setItem("wt", 0)
+localStorage.setItem("tt", 0)
+localStorage.setItem("pt", 0)*/
+
 
 </script>
 <body>
@@ -80,6 +97,16 @@ console.log("Total White: " +localStorage.getItem("wt"));
 <h2>Yellow Program</h2>
 <p>This is the one for treating sensitive skin. It boosts circulation and lymphatic flow (drains toxins) as well as soothing and comforting the skin.</p>
 <p class="w3-padding-16"><a href="yp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Purple Program</h2>
+<p>This treatment is a mix of red and blue light, it is a combination of two kinds of phototherapy, effective in the treatment of acne and repairs acne scars.</p>
+<p class="w3-padding-16"><a href="pp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
+</div>
+<div class="w3-center w3-margin-bottom">
+<h2>Turquoise Program</h2>
+<p>Penetrates the skin deeply, speeds up the living tissue metabolism and improves the appearance of fine lines and sagging skin.</p>
+<p class="w3-padding-16"><a href="tp.html"><button class="w3-button w3-pink" onclick="goRed()">Go</button></a></p>
 </div>
 <div class="w3-center w3-margin-bottom">
 <h2>White Program</h2>

@@ -71,6 +71,42 @@ function timer (seconds){ //counts time, takes seconds
   intervalTimer = setInterval(function(){
     timeLeft = Math.round((remainTime - Date.now()) / 1000);
     if(timeLeft < 0 && currentCol==1){
+      if (col1 === "red"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("rt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("rt",newRTtotal);
+      } else if (col1 === "blue"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("bt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("bt",newRTtotal);
+      } else if (col1 === "green"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("gt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("gt",newRTtotal);
+      } else if (col1 === "yellow"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("yt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("yt",newRTtotal);
+      } else if (col1 === "white"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("wt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("wt",newRTtotal);
+      }else if (col1 === "purple"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("pt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("pt",newRTtotal);
+      }else if (col1 === "turquoise"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("tt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("tt",newRTtotal);
+      }
       led();
       currentCol++;
       clearInterval(intervalTimer);
@@ -85,6 +121,42 @@ function timer (seconds){ //counts time, takes seconds
       pauseBtn.classList.add('play');
       return ;
     } else if(timeLeft < 0 && currentCol==2){
+      if (col2 === "red"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("rt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("rt",newRTtotal);
+      } else if (col2 === "blue"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("bt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("bt",newRTtotal);
+      } else if (col2 === "green"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("gt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("gt",newRTtotal);
+      } else if (col2 === "yellow"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("yt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("yt",newRTtotal);
+      } else if (col2 === "white"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("wt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("wt",newRTtotal);
+      }else if (col2 === "purple"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("pt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("pt",newRTtotal);
+      }else if (col2 === "turquoise"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("tt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("tt",newRTtotal);
+      }
       led();
       currentCol++;
       clearInterval(intervalTimer);
@@ -99,6 +171,42 @@ function timer (seconds){ //counts time, takes seconds
       pauseBtn.classList.add('play');
       return ; 
     }else if(timeLeft < 0 && currentCol==3){
+      if (col3 === "red"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("rt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("rt",newRTtotal);
+      } else if (col3 === "blue"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("bt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("bt",newRTtotal);
+      } else if (col3 === "green"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("gt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("gt",newRTtotal);
+      } else if (col3 === "yellow"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("yt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("yt",newRTtotal);
+      } else if (col3 === "white"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("wt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("wt",newRTtotal);
+      }else if (col3 === "purple"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("pt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("pt",newRTtotal);
+      }else if (col3 === "turquoise"){
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("tt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("tt",newRTtotal);
+      }
       led();
       currentCol=1;
       clearInterval(intervalTimer);
@@ -177,7 +285,8 @@ function led(){
             myurl = encodeURI(targetURL);
             ledIntermediateState = "IOT set to ON";
             let timerInterval
-            Swal.fire({
+            if (timeLeft <= 0){
+              Swal.fire({
               title: 'First Custom Colour Complete',
               html: 'Starting second custom colour in 3 seconds',
               timer: 3000,
@@ -205,6 +314,7 @@ function led(){
               }
             })
         }
+      }
         $("#led13").html(ledIntermediateState);
         // Actually make the call to the webserver.
         $.get(myurl, function (data) {
@@ -236,6 +346,7 @@ function led(){
             myurl = encodeURI(targetURL);
             ledIntermediateState = "IOT set to ON";
             let timerInterval
+            if (timeLeft <= 0){
             Swal.fire({
               title: 'Second Custom Colour Complete',
               html: 'Starting third custom colour in 3 seconds',
@@ -264,7 +375,7 @@ function led(){
               }
             })
         }
-
+      }
         $("#led13").html(ledIntermediateState);
         // Actually make the call to the webserver.
         $.get(myurl, function (data) {

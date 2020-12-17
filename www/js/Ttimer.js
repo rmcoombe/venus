@@ -18,7 +18,7 @@ const setterBtns = document.querySelectorAll('button[data-setter]');
 
 let intervalTimer;
 let timeLeft;
-let wholeTime = 10 * 60; // manage this to set the whole time 
+let wholeTime = 1 * 60; // manage this to set the whole time 
 let isPaused = false;
 let isStarted = false;
 
@@ -63,6 +63,11 @@ function timer (seconds){ //counts time, takes seconds
   intervalTimer = setInterval(function(){
     timeLeft = Math.round((remainTime - Date.now()) / 1000);
     if(timeLeft < 0){
+      led();
+      var totalThisRun = parseInt(wholeTime);
+      var totalBeforeThisRun = parseInt(localStorage.getItem("tt"));
+      var newRTtotal = totalThisRun + totalBeforeThisRun;
+      localStorage.setItem("tt",newRTtotal);
       clearInterval(intervalTimer);
       isStarted = false;
       setterBtns.forEach(function(btn){
@@ -127,12 +132,12 @@ function led(){
         ledIntermediateState = "error"; // if we ever see this, we have problems.
         // toggle the state based on our last state.
         if (ledState === 0) {
-            targetURL = "http://192.168.4.1/red/on"
+            targetURL = "http://192.168.4.1/turquoise/on"
             ledState = 1;
             myurl = encodeURI(targetURL);
             ledIntermediateState = "IOT set to OFF";
         } else {
-            targetURL = "http://192.168.4.1/red/off"
+            targetURL = "http://192.168.4.1/turquoise/off"
             ledState = 0;
             myurl = encodeURI(targetURL);
             ledIntermediateState = "IOT set to ON";

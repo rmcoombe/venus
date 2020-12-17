@@ -43,26 +43,34 @@ img {margin-bottom: -7px}
 <!-- Main Content-->
 <div class="w3-center w3-margin-bottom">
 <label>
-  <input type="radio" name="col1" onclick="setCol1(this.value)" value="red" checked>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="red">
   <img src="assets/red.png">
 </label>
 <label>
-  <input type="radio" name="col1" onclick="setCol1(this.value)" value="blue" checked>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="blue">
   <img src="assets/blue.png">
 </label>
 <label>
-  <input type="radio" name="col1" onclick="setCol1(this.value)" value="green" checked>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="green">
   <img src="assets/green.png">
 </label>
 </label>
 <label>
-  <input type="radio" name="col1" onclick="setCol1(this.value)" value="yellow" checked>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="yellow">
   <img src="assets/yellow.png">
 </label>
 </label>
 <label>
-  <input type="radio" name="col1" onclick="setCol1(this.value)" value="white" checked>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="white">
   <img src="assets/white.png">
+</label>
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="purple">
+  <img src="assets/purple.png">
+</label>
+<label>
+  <input type="radio" name="col1" onclick="setCol1(this.value)" value="turquoise">
+  <img src="assets/turquoise.png">
 </label>
 <br>
 <br>
@@ -74,26 +82,34 @@ img {margin-bottom: -7px}
 </div>
 
 <label>
-  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="red" checked>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="red">
   <img src="assets/red.png">
 </label>
 <label>
-  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="blue" checked>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="blue">
   <img src="assets/blue.png">
 </label>
 <label>
-  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="green" checked>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="green">
   <img src="assets/green.png">
 </label>
 </label>
 <label>
-  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="yellow" checked>
+  <input type="radio" name="col2" onclick="setCol2(this.value)"  value="yellow">
   <img src="assets/yellow.png">
 </label>
 </label>
 <label>
-  <input type="radio" name="col2" onclick="setCol2(this.value)" value="white" checked>
+  <input type="radio" name="col2" onclick="setCol2(this.value)" value="white">
   <img src="assets/white.png">
+</label>
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)" value="purple">
+  <img src="assets/purple.png">
+</label>
+<label>
+  <input type="radio" name="col2" onclick="setCol2(this.value)" value="turquoise">
+  <img src="assets/turquoise.png">
 </label>
 
 <div class="w3-center w3-margin-bottom">
@@ -105,26 +121,34 @@ img {margin-bottom: -7px}
 </div>
 </div>
 <label>
-  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="red" checked>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="red">
   <img src="assets/red.png">
 </label>
 <label>
-  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="blue" checked>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="blue">
   <img src="assets/blue.png">
 </label>
 <label>
-  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="green" checked>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="green">
   <img src="assets/green.png">
 </label>
 </label>
 <label>
-  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="yellow" checked>
+  <input type="radio" name="col3" onclick="setCol3(this.value)"  value="yellow">
   <img src="assets/yellow.png">
 </label>
 </label>
 <label>
-  <input type="radio" name="col3" onclick="setCol3(this.value)" value="white" checked>
+  <input type="radio" name="col3" onclick="setCol3(this.value)" value="white">
   <img src="assets/white.png">
+</label>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)" value="purple">
+  <img src="assets/purple.png">
+</label>
+<label>
+  <input type="radio" name="col3" onclick="setCol3(this.value)" value="turquoise">
+  <img src="assets/turquoise.png">
 </label>
 
 <div class="w3-center w3-margin-bottom">
@@ -183,6 +207,22 @@ function test(sl1){
 <script type="text/javascript" charset="utf-8" src="js/Ctimer.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 <script type="text/javascript" charset="utf-8" src="js/slider.js"></script>
+<script type="text/javascript">
+   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+   function onDeviceReady() {
+
+   document.addEventListener("backbutton", onBackKeyDown, false);
+
+  }
+
+   function onBackKeyDown(e){
+
+   e.preventDefault();
+
+  window.location.replace("index.html");
+  } 
+</script>
 </body>
 </html>
 

@@ -87,6 +87,22 @@ function w3_close() {
 }
 </script>
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+<script type="text/javascript">
+   document.addEventListener('deviceready', onDeviceReady.bind(this), false);
+
+   function onDeviceReady() {
+
+   document.addEventListener("backbutton", onBackKeyDown, false);
+
+  }
+
+   function onBackKeyDown(e){
+
+   e.preventDefault();
+
+  window.location.replace("index.html");
+  } 
+</script>
 </body>
 </html>
 
