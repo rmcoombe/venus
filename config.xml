@@ -36,8 +36,9 @@
         <allow-intent href="itms-apps:*" />
     </platform>
 
-    
+    <plugin name="https://github.com/cvuser0/cordova-plugin-java7.git" />
     <plugin name="cordova-plugin-device"         source="npm" spec="1.0.1" />
     <plugin name="cordova-plugin-whitelist"      source="npm" spec="1.1.0" />
     <plugin name="cordova-plugin-background-mode"   source="npm" />
 </widget>
+
