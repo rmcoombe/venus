@@ -407,6 +407,35 @@ function led(){
             ledState = 0;
             myurl = encodeURI(targetURL);
             ledIntermediateState = "IOT set to ON";
+            let timerInterval
+            if (timeLeft <= 0){
+            Swal.fire({
+              title: 'Your Custom Program is Complete',
+              html: 'Press play to run your custom program again',
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
+                  const content = Swal.getContent()
+                  if (content) {
+                    const b = content.querySelector('b')
+                    if (b) {
+                      b.textContent = Swal.getTimerLeft()
+                    }
+                  }
+                }, 100)
+              },
+              willClose: () => {
+                clearInterval(timerInterval)
+              }
+            }).then((result) => {
+              /* Read more about handling dismissals below */
+              if (result.dismiss === Swal.DismissReason.timer) {
+                console.log('I was closed by the timer')
+              }
+            })
+        }
         }
         $("#led13").html(ledIntermediateState);
         // Actually make the call to the webserver.
